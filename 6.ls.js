@@ -10,3 +10,6 @@ fs.readdir(".", (error, data) => {
     console.log(file)
   })
 })
+
+//we cna check if file exists
+fs.stat('content')
