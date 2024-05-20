@@ -1,4 +1,4 @@
-//native systems
+//native systems modules
 
 //we import the operating system (OS) module
 const os = require('node:os')
