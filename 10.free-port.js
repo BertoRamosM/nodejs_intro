@@ -5,16 +5,16 @@ function findPort(desiredPort) {
     const server = net.createServer()
 
     server.listen(desiredPort, () => {
-      const port = server.address()
+      const {port} = server.address()
       server.close(() => {
         resolve(port)
       })
     })
     server.on('error', (error) => { 
-      if (error.code === "EARDINUSE") {
-        resolve(findPort(0).then(port => resolve(port)))
+      if (error.code === "EADDRINUSE") {
+        resolve(findPort(desiredPort + 1).then((port) => resolve(port)));
       } else {
-        reject(error)
+        reject(error);
       }
   })
   })
