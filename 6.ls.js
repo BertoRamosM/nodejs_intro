@@ -1,7 +1,7 @@
 const fs = require('node:fs')
 
-//we can read the directories
-fs.readdir(".", (error, data) => {
+// we can read the directories
+fs.readdir('.', (error, data) => {
   if (error) {
     console.error('Error on reading the directory', error)
     return
@@ -11,5 +11,5 @@ fs.readdir(".", (error, data) => {
   })
 })
 
-//we cna check if file exists
+// we cna check if file exists
 fs.stat('content')
