@@ -35,15 +35,16 @@ async function ls(folder) {
     //true or false
     const isDirectory = fileStats.isDirectory();
     //one symbol or another
-    const fileType = isDirectory ? "d" : "-"
+    const fileType = isDirectory ? "d" : "f"
     //the file size
     const fileSize = fileStats.size;
     //last time modified
     const fileModified = fileStats.mtime.toLocaleString();
 
     //we return a template string with all the information
-    return `${fileType} ${file} ${fileSize.toString()} ${fileModified}`
+    return `${fileType} ${file.padEnd(20)} ${fileSize.toString().padStart(10)} ${fileModified}`
   })
+  //when we have the files we console log them all
   const filesInfo = await Promise.all(filePromises)
   filesInfo.forEach(file => {
     console.log(file)

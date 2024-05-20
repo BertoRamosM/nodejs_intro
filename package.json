@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-course-05-2024",
+  "version": "1.0.0",
+  "description": "introduction course to node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BertoRamosM/nodejs_intro.git"
+  },
+  "keywords": [
+    "node",
+    "intro",
+    "course",
+    "nodejs"
+  ],
+  "author": "bertus ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BertoRamosM/nodejs_intro/issues"
+  },
+  "homepage": "https://github.com/BertoRamosM/nodejs_intro#readme",
+  "dependencies": {
+    "picocolors": "^1.0.1"
+  }
+}
