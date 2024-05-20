@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/BertoRamosM/nodejs_intro#readme",
   "dependencies": {
-    "picocolors": "^1.0.1"
+    "picocolors": "1.0.1"
   }
 }

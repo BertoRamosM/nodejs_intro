@@ -1,5 +1,6 @@
 const fs = require("node:fs/promises");
 const path = require("node:path")
+const pc = require("picocolors")
 
 //here we can pass an argument when calling this function, if the argument dosnt exists as directory it uses the default "."
 const folder = process.argv[2] ?? "."
@@ -13,7 +14,7 @@ async function ls(folder) {
   }
   catch {
     //catch the error and exit. important!
-    console.error(`Error when loading the directory ${folder}`)
+    console.error(pc.red(`Error when loading the directory ${folder}`))
     process.exit(1)
   }
 
@@ -42,7 +43,7 @@ async function ls(folder) {
     const fileModified = fileStats.mtime.toLocaleString();
 
     //we return a template string with all the information
-    return `${fileType} ${file.padEnd(20)} ${fileSize.toString().padStart(10)} ${fileModified}`
+    return `${fileType} ${pc.blue(file.padEnd(20))} ${pc.green(fileSize.toString().padStart(10))} ${pc.yellow(fileModified)}`
   })
   //when we have the files we console log them all
   const filesInfo = await Promise.all(filePromises)
